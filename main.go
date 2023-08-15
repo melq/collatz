@@ -6,10 +6,24 @@ import (
 )
 
 func main() {
-	executeCount(10)
+	n := 10000
+	maxCount := 0
+	maxN := 0
+
+	for i := 0; i < n; i++ {
+		tmp := executeCount(i)
+		if maxCount < tmp {
+			maxCount = tmp
+			maxN = i
+		}
+	}
+
+	fmt.Printf("maxN: %d, maxCount: %d", maxN, maxCount)
 	return
 }
 
-func executeCount(n int) {
-	fmt.Printf("n = %d: %d\n", n, collatz.CountSteps(n))
+func executeCount(n int) int {
+	r := collatz.CountSteps(n)
+	fmt.Printf("n: %d, count: %d\n", n, r)
+	return r
 }
