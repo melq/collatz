@@ -11,5 +11,5 @@ func main() {
 }
 
 func executeCount(n int) {
-	fmt.Printf("n = %d: %d", n, collatz.CountSteps(n))
+	fmt.Printf("n = %d: %d\n", n, collatz.CountSteps(n))
 }
